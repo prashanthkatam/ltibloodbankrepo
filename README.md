@@ -22,7 +22,7 @@ Example: Donate-blood.php, Find-donor.php, config.php, signup.php, index.php {lo
 
 # Connecting to My SQL Database
 
-mysql -h mysqldb2022.ccgwdt707ye4.us-west-2.rds.amazonaws.com -u admin -p
+mysql -h mysqldb2022.ckgolaegfzzq.us-west-2.rds.amazonaws.com -u admin -p
 
 # Create Database
 Create database customers;
@@ -32,7 +32,7 @@ Create database customers;
 use customers;
 
 # Create table 
-create table donors(id int AUTO_INCREMENT primary key, fname varchar(255) NOT NULL , lname varchar(255) NOT NULL , mobileno BIGINT UNIQUE, city varchar(255) NOT NULL, date date, dob date, bloodgroup varchar(255) NOT NULL);
+create table donors(id int AUTO_INCREMENT primary key, fname varchar(255) NOT NULL , lname varchar(255) NOT NULL , mobileno BIGINT UNIQUE, city varchar(255) NOT NULL, bfrom date, bto date, dob date, bloodgroup varchar(255) NOT NULL);
 
 
 
@@ -52,13 +52,15 @@ CREATE TABLE `users` (
     ('prashanth', 'Prashanth Katkam', '12345'),
     ('vijay', 'Vijay mourya', '12345');
 
-
-INSERT INTO `donors` (`fname`, `lname`, `mobileno`, `city`, `date`, `dob`, `bloodgroup`) VALUES
-('Srikanth', 'Koraveni', '9000736060', 'Pune', '2022-09-28', '1998-05-22', 'O_Positive'),
-('Prashanth', 'Katkam', '7989919097', 'Mumbai', '2022-09-28', '1998-09-30', 'O_Positive'),
-('Kranthi', 'Khaitha', '9876789871', 'Bangalore', '2022-09-16', '1996-07-02', 'B_Positive'),
-('Srinivas', 'Thota', '9812789411', 'Mumbai', '2022-09-12', '1992-07-22', 'B_Positive'),    
-('Zaheer', 'Khan', '7788678987', 'Chennai', '2022-09-11', '1998-11-11', 'A_Positive');
+INSERT INTO `donors` (`fname`, `lname`, `mobileno`, `city`, `bfrom`, `bto`, `dob`, `bloodgroup`) VALUES
+('Srikanth', 'Koraveni', '9000736060', 'Pune', '2022-09-28', '2022-12-28', '1998-05-22', 'O_Positive'),
+('Prashanth', 'Katkam', '7989919097', 'Mumbai', '2022-09-17', '2022-11-18', '1998-09-30', 'O_Positive'),
+('Kranthi', 'Khaitha', '9876789871', 'Bangalore', '2022-09-16', '2022-11-08', '1996-07-02', 'B_Positive'),
+('Srinivas', 'Thota', '9812789411', 'Mumbai', '2022-09-18', '2022-10-31', '1992-07-22', 'O_Positive'),
+('Pandya', 'Loka', '9877787887', 'Mumbai', '2022-09-18', '2022-10-09', '1992-07-22', 'B_Positive'),
+('Prajodh', 'Shreya', '9812444411', 'Mumbai', '2022-08-23', '2022-10-31', '1992-07-22', 'B_Positive'),
+('Srinivas', 'Thota', '9812723411', 'Mumbai', '2022-04-19', '2022-10-07', '1992-07-22', 'B_Positive'), 
+('Zaheer', 'Khan', '7788678987', 'Chennai', '2022-09-11', '2022-12-19', '1998-11-11', 'A_Positive');
 
 
 #DB Endpoint needs to be added
@@ -95,7 +97,7 @@ sudo git commit -m ""
 
 git remote set-url origin https://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@github.com/prashanthkatam/ltibloodbank.git
 
-git remote set-url origin https://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@github.com/prashanthkatam/ltibloodbankrepo.git
+git remote set-url origin https://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@github.com/prashanthkatam/ltibloodbankrepo.git
 
 
 sudo git push origin master
